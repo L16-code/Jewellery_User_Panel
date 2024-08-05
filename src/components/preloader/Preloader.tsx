@@ -1,7 +1,10 @@
 
+
+
 const preloader = () => {
+   
     return (
-        <div id="preloader">
+        <div id="preloader" >
             <div id="ctn-preloader" className="ctn-preloader">
                 <div className="animation-preloader">
                     <div className="spinner" />

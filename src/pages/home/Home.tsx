@@ -2,10 +2,22 @@ import Footer from "../../components/footer/Footer"
 import Header from "../../components/header/Header"
 import QuickView from "../../components/quickView/quickView"
 import ScrollTop from "../../components/scrollTop/ScrollTop"
+import Preloader from "../../components/preloader/Preloader"
+import { useEffect, useState } from "react"
 const Home = () => {
+    const [Loading, SetLoading] = useState(true);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            SetLoading(false)
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    })
     return (
         <>
-            {/* <Preloader /> */}
+            {
+                Loading && <Preloader />
+            }
             <Header />
             <main className="main__content_wrapper">
                 {/* Start slider section */}
