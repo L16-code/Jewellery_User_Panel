@@ -1,8 +1,14 @@
-
-const OffcanvasFilter = () => {
+interface OffcanvasFilterProps {
+    openSidebar: boolean;
+    setFilterSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilterSidebar }) => {
+    const handleClose = () => {
+        setFilterSidebar(false); // Close the sidebar
+    };
     return (
-        <div className="offcanvas__filter--sidebar widget__area active">
-            <button type="button" className="offcanvas__filter--close" data-offcanvas="">
+        <div className={`offcanvas__filter--sidebar widget__area ${openSidebar ? "active" : ""} `}>
+            <button type="button" className="offcanvas__filter--close" data-offcanvas="" onClick={handleClose}>
                 <svg
                     className="minicart__close--icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +52,7 @@ const OffcanvasFilter = () => {
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu " style={{display:"block",boxSizing:"border-box"}}>
+                            <ul className="widget__categories--sub__menu " style={{ display: "block", boxSizing: "border-box" }}>
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"

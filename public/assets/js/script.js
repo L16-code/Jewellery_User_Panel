@@ -10,30 +10,20 @@
 /*
   Before After activation
 */
-var divisor = document.getElementById("divisor"),
-    handle = document.getElementById("handle"),
-    slider = document.getElementById("slider");
+// var divisor = document.getElementById("divisor"),
+    // handle = document.getElementById("handle"),
+    // slider = document.getElementById("slider");
 
-function moveDivisor() {
-  handle.style.left = slider.value+"%";
-	divisor.style.width = slider.value+"%";
-}
+// function moveDivisor() {
+  // handle.style.left = slider.value+"%";
+	// divisor.style.width = slider.value+"%";
+// }
 
-window.onload = function() {
-	moveDivisor();
-};
-
-
-// Preloader
-// const preLoader = function () {
-//   let preloaderWrapper = document.getElementById("preloader");
-//   window.onload = () => {
-//     preloaderWrapper.classList.add("loaded");
-//   };
+// window.onload = function() {
+// 	moveDivisor();
 // };
-// preLoader();
 
-// getSiblings
+
 var getSiblings = function (elem) {
   const siblings = [];
   let sibling = elem.parentNode.firstChild;
@@ -46,47 +36,47 @@ var getSiblings = function (elem) {
   return siblings;
 };
 
-/* Slide Up */
-var slideUp = (target, time) => {
-  const duration = time ? time : 500;
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + "ms";
-  target.style.boxSizing = "border-box";
-  target.style.height = target.offsetHeight + "px";
-  target.offsetHeight;
-  target.style.overflow = "hidden";
-  target.style.height = 0;
-  window.setTimeout(() => {
-    target.style.display = "none";
-    target.style.removeProperty("height");
-    target.style.removeProperty("overflow");
-    target.style.removeProperty("transition-duration");
-    target.style.removeProperty("transition-property");
-  }, duration);
-};
+  /* Slide Up */
+  var slideUp = (target, time) => {
+    const duration = time ? time : 500;
+    target.style.transitionProperty = "height, margin, padding";
+    target.style.transitionDuration = duration + "ms";
+    target.style.boxSizing = "border-box";
+    target.style.height = target.offsetHeight + "px";
+    target.offsetHeight;
+    target.style.overflow = "hidden";
+    target.style.height = 0;
+    window.setTimeout(() => {
+      target.style.display = "none";
+      target.style.removeProperty("height");
+      target.style.removeProperty("overflow");
+      target.style.removeProperty("transition-duration");
+      target.style.removeProperty("transition-property");
+    }, duration);
+  };
 
-/* Slide Down */
-var slideDown = (target, time) => {
-  const duration = time ? time : 500;
-  target.style.removeProperty("display");
-  let display = window.getComputedStyle(target).display;
-  if (display === "none") display = "block";
-  target.style.display = display;
-  const height = target.offsetHeight;
-  target.style.overflow = "hidden";
-  target.style.height = 0;
-  target.offsetHeight;
-  target.style.boxSizing = "border-box";
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + "ms";
-  target.style.height = height + "px";
-  window.setTimeout(() => {
-    target.style.removeProperty("height");
-    target.style.removeProperty("overflow");
-    target.style.removeProperty("transition-duration");
-    target.style.removeProperty("transition-property");
-  }, duration);
-};
+  /* Slide Down */
+  var slideDown = (target, time) => {
+    const duration = time ? time : 500;
+    target.style.removeProperty("display");
+    let display = window.getComputedStyle(target).display;
+    if (display === "none") display = "block";
+    target.style.display = display;
+    const height = target.offsetHeight;
+    target.style.overflow = "hidden";
+    target.style.height = 0;
+    target.offsetHeight;
+    target.style.boxSizing = "border-box";
+    target.style.transitionProperty = "height, margin, padding";
+    target.style.transitionDuration = duration + "ms";
+    target.style.height = height + "px";
+    window.setTimeout(() => {
+      target.style.removeProperty("height");
+      target.style.removeProperty("overflow");
+      target.style.removeProperty("transition-duration");
+      target.style.removeProperty("transition-property");
+    }, duration);
+  };
 
 // Get window top offset
 function TopOffset(el) {

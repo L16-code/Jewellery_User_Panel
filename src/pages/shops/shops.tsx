@@ -3,10 +3,14 @@ import Header from "../../components/header/Header"
 import QuickView from "../../components/quickView/quickView"
 import ScrollTop from "../../components/scrollTop/ScrollTop"
 import Preloader from "../../components/preloader/Preloader"
-import { useEffect, useState } from "react"
+import { useEffect,  useState } from "react"
 import OffcanvasFilter from "../../components/offcanvas-filter/OffcanvasFilter"
 
 const Shops = () => {
+
+    const [filterSidebar, setFilterSidebar] = useState<boolean>(false);
+    const [ProductView, setProductView] = useState<boolean>(false);
+    const [CatgeoryOpen,SetCategoyOpen] = useState<boolean>(false);
     const [Loading, SetLoading] = useState(true);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -15,12 +19,18 @@ const Shops = () => {
 
         return () => clearTimeout(timer);
     })
+    const handleFilterButtonClick = () => {
+        setFilterSidebar(true); // Open the sidebar
+    };
+    const ProductViewHandler = () => {
+        setProductView(!ProductView);
+    }
     return (
         <>
             {
                 Loading && <Preloader />
             }
-            <OffcanvasFilter />
+            <OffcanvasFilter openSidebar={filterSidebar} setFilterSidebar={setFilterSidebar} />
             <Header />
             <main className="main__content_wrapper">
                 {/* Start breadcrumb section */}
@@ -169,8 +179,8 @@ const Shops = () => {
                                 <div className="shop__sidebar--widget widget__area d-none d-lg-block">
                                     <div className="single__widget widget__bg">
                                         <h2 className="widget__title h3">Categories</h2>
-                                        <ul className="widget__categories--menu">
-                                            <li className="widget__categories--menu__list">
+                                        <ul className="widget__categories--menu" >
+                                            <li className="widget__categories--menu__list " >
                                                 <label className="widget__categories--menu__label d-flex align-items-center">
                                                     <img
                                                         className="widget__categories--menu__img"
@@ -193,7 +203,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu">
+                                                <ul className="widget__categories--sub__menu " style={{ boxSizing: "border-box", display: "none" }}>
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -263,9 +273,7 @@ const Shops = () => {
                                                         src="assets/img/product/small-product/product2.webp"
                                                         alt="categories-img"
                                                     />
-                                                    <span className="widget__categories--menu__text">
-                                                        Skin Silver
-                                                    </span>
+                                                    <span className="widget__categories--menu__text">Skin Silver</span>
                                                     <svg
                                                         className="widget__categories--menu__arrowdown--icon"
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -349,9 +357,7 @@ const Shops = () => {
                                                         src="assets/img/product/small-product/product3.webp"
                                                         alt="categories-img"
                                                     />
-                                                    <span className="widget__categories--menu__text">
-                                                        Night Serum
-                                                    </span>
+                                                    <span className="widget__categories--menu__text">Night Serum</span>
                                                     <svg
                                                         className="widget__categories--menu__arrowdown--icon"
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -435,9 +441,7 @@ const Shops = () => {
                                                         src="assets/img/product/small-product/product4.webp"
                                                         alt="categories-img"
                                                     />
-                                                    <span className="widget__categories--menu__text">
-                                                        Cream Oil
-                                                    </span>
+                                                    <span className="widget__categories--menu__text">Cream Oil</span>
                                                     <svg
                                                         className="widget__categories--menu__arrowdown--icon"
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -521,9 +525,7 @@ const Shops = () => {
                                                         src="assets/img/product/small-product/product5.webp"
                                                         alt="categories-img"
                                                     />
-                                                    <span className="widget__categories--menu__text">
-                                                        Skin Cleaner
-                                                    </span>
+                                                    <span className="widget__categories--menu__text">Skin Cleaner</span>
                                                     <svg
                                                         className="widget__categories--menu__arrowdown--icon"
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -1093,6 +1095,7 @@ const Shops = () => {
                                             <button
                                                 className="widget__filter--btn d-flex d-lg-none align-items-center"
                                                 data-offcanvas=""
+                                                onClick={handleFilterButtonClick}
                                             >
                                                 <svg
                                                     className="widget__filter--btn__icon"
@@ -1170,10 +1173,11 @@ const Shops = () => {
                                             <div className="product__view--mode__list">
                                                 <div className="product__tab--one product__grid--column__buttons d-flex justify-content-center">
                                                     <button
-                                                        className="product__grid--column__buttons--icons active"
+                                                        className={`product__grid--column__buttons--icons ${ProductView ? "active" : ""} `}
                                                         aria-label="grid btn"
                                                         data-toggle="tab"
                                                         data-target="#product_grid"
+                                                        onClick={ProductViewHandler}
                                                     >
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -1218,10 +1222,11 @@ const Shops = () => {
                                                         </svg>
                                                     </button>
                                                     <button
-                                                        className="product__grid--column__buttons--icons"
+                                                        className={`product__grid--column__buttons--icons ${!ProductView ? "active" : ""}`}
                                                         aria-label="list btn"
                                                         data-toggle="tab"
                                                         data-target="#product_list"
+                                                        onClick={ProductViewHandler}
                                                     >
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -1309,7 +1314,7 @@ const Shops = () => {
                                         </p>
                                     </div>
                                     <div className="tab_content">
-                                        <div id="product_grid" className="tab_pane active show">
+                                        <div id="product_grid" className={`tab_pane ${ProductView ? "active show" : ""}`}>
                                             <div className="product__section--inner">
                                                 <div className="row mb--n30">
                                                     <div className="col-lg-4 col-md-4 col-sm-6 col-6 custom-col mb-30">
@@ -3254,7 +3259,7 @@ const Shops = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="product_list" className="tab_pane">
+                                        <div id="product_list" className={`tab_pane ${!ProductView ? "active show" : ""}`}>
                                             <div className="product__section--inner product__section--style3__inner">
                                                 <div className="row row-cols-1 mb--n30">
                                                     <div className="col mb-30">
