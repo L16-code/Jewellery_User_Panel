@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 interface OffcanvasFilterProps {
     openSidebar: boolean;
     setFilterSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilterSidebar }) => {
+const OffcanvasFilter: React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilterSidebar }) => {
+    const [Count,SetCount] = useState<Number>(-1);
     const handleClose = () => {
         setFilterSidebar(false); // Close the sidebar
     };
@@ -28,9 +31,9 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
             <div className="offcanvas__filter--sidebar__inner">
                 <div className="single__widget widget__bg">
                     <h2 className="widget__title h3">Categories</h2>
-                    <ul className="widget__categories--menu">
-                        <li className="widget__categories--menu__list active">
-                            <label className="widget__categories--menu__label d-flex align-items-center">
+                    <ul className="widget__categories--menu" >
+                        <li className={`widget__categories--menu__list ${Count == 1 ? 'active' : ""}`} onClick={() => { if (Count === 1) { SetCount(-1) } else { SetCount(1) } }} >
+                            <label className="widget__categories--menu__label d-flex align-items-center" >
                                 <img
                                     className="widget__categories--menu__img"
                                     src="assets/img/product/small-product/product1.webp"
@@ -52,7 +55,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu " style={{ display: "block", boxSizing: "border-box" }}>
+                            <ul className={`widget__categories--sub__menu ${Count == 1 ? 'd-block border-box border-box  ' : ""}  `}  >
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -115,7 +118,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                 </li>
                             </ul>
                         </li>
-                        <li className="widget__categories--menu__list">
+                        <li className={`widget__categories--menu__list ${Count == 2 ? 'active' : ""}`} onClick={() => { if (Count === 2) { SetCount(-1) } else { SetCount(2) } }} >
                             <label className="widget__categories--menu__label d-flex align-items-center">
                                 <img
                                     className="widget__categories--menu__img"
@@ -136,7 +139,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu">
+                            <ul className={`widget__categories--sub__menu ${Count == 2 ? 'd-block border-box' : ""}`}>
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -199,7 +202,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                 </li>
                             </ul>
                         </li>
-                        <li className="widget__categories--menu__list">
+                        <li className={`widget__categories--menu__list ${Count == 3 ? 'active' : ""}`} onClick={() => { if (Count === 3) { SetCount(-1) } else { SetCount(3) } }}>
                             <label className="widget__categories--menu__label d-flex align-items-center">
                                 <img
                                     className="widget__categories--menu__img"
@@ -220,7 +223,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu">
+                            <ul className={`widget__categories--sub__menu ${Count == 3 ? 'd-block border-box' : ""}`}>
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -283,7 +286,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                 </li>
                             </ul>
                         </li>
-                        <li className="widget__categories--menu__list">
+                        <li className={`widget__categories--menu__list ${Count == 4 ? 'active' : ""}`} onClick={() => { if (Count === 4) { SetCount(-1) } else { SetCount(4) } }}>
                             <label className="widget__categories--menu__label d-flex align-items-center">
                                 <img
                                     className="widget__categories--menu__img"
@@ -304,7 +307,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu">
+                            <ul className={`widget__categories--sub__menu ${Count == 4 ? 'd-block border-box' : ""}`}>
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -367,7 +370,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                 </li>
                             </ul>
                         </li>
-                        <li className="widget__categories--menu__list">
+                        <li className={`widget__categories--menu__list ${Count == 5 ? 'active' : ""}`} onClick={() => { if (Count === 5) { SetCount(-1) } else { SetCount(5) } }}>
                             <label className="widget__categories--menu__label d-flex align-items-center">
                                 <img
                                     className="widget__categories--menu__img"
@@ -388,7 +391,7 @@ const OffcanvasFilter : React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilt
                                     />
                                 </svg>
                             </label>
-                            <ul className="widget__categories--sub__menu">
+                            <ul className={`widget__categories--sub__menu ${Count == 5 ? 'd-block' : ""}`}>
                                 <li className="widget__categories--sub__menu--list">
                                     <a
                                         className="widget__categories--sub__menu--link d-flex align-items-center"

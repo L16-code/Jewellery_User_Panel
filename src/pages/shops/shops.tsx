@@ -10,7 +10,8 @@ const Shops = () => {
 
     const [filterSidebar, setFilterSidebar] = useState<boolean>(false);
     const [ProductView, setProductView] = useState<boolean>(false);
-    const [CatgeoryOpen,SetCategoyOpen] = useState<boolean>(false);
+    const [Count,SetCount] = useState<Number>(-1);
+
     const [Loading, SetLoading] = useState(true);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -180,8 +181,8 @@ const Shops = () => {
                                     <div className="single__widget widget__bg">
                                         <h2 className="widget__title h3">Categories</h2>
                                         <ul className="widget__categories--menu" >
-                                            <li className="widget__categories--menu__list " >
-                                                <label className="widget__categories--menu__label d-flex align-items-center">
+                                            <li className={`widget__categories--menu__list ${Count==1?'active':""}`} onClick={()=>{ if(Count===1){SetCount(-1)}else{SetCount(1)}}} >
+                                                <label className="widget__categories--menu__label d-flex align-items-center" >
                                                     <img
                                                         className="widget__categories--menu__img"
                                                         src="assets/img/product/small-product/product1.webp"
@@ -203,7 +204,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu " style={{ boxSizing: "border-box", display: "none" }}>
+                                                <ul className={`widget__categories--sub__menu ${Count==1?'d-block border-box border-box  ':""}  `}  >
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -266,7 +267,7 @@ const Shops = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="widget__categories--menu__list">
+                                            <li className={`widget__categories--menu__list ${Count==2?'active':""}`} onClick={()=>{ if(Count===2){SetCount(-1)}else{SetCount(2)}}} >
                                                 <label className="widget__categories--menu__label d-flex align-items-center">
                                                     <img
                                                         className="widget__categories--menu__img"
@@ -287,7 +288,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu">
+                                                <ul className={`widget__categories--sub__menu ${Count==2?'d-block border-box':""}`}>
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -350,7 +351,7 @@ const Shops = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="widget__categories--menu__list">
+                                            <li className={`widget__categories--menu__list ${Count==3?'active':""}`} onClick={()=>{ if(Count===3){SetCount(-1)}else{SetCount(3)}}}>
                                                 <label className="widget__categories--menu__label d-flex align-items-center">
                                                     <img
                                                         className="widget__categories--menu__img"
@@ -371,7 +372,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu">
+                                                <ul className={`widget__categories--sub__menu ${Count==3?'d-block border-box':""}`}>
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -434,7 +435,7 @@ const Shops = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="widget__categories--menu__list">
+                                            <li className={`widget__categories--menu__list ${Count==4?'active':""}`} onClick={()=>{ if(Count===4){SetCount(-1)}else{SetCount(4)}}}>
                                                 <label className="widget__categories--menu__label d-flex align-items-center">
                                                     <img
                                                         className="widget__categories--menu__img"
@@ -455,7 +456,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu">
+                                                <ul className={`widget__categories--sub__menu ${Count==4?'d-block border-box':""}`}>
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
@@ -518,7 +519,7 @@ const Shops = () => {
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li className="widget__categories--menu__list">
+                                            <li className={`widget__categories--menu__list ${Count==5?'active':""}`} onClick={()=>{ if(Count===5){SetCount(-1)}else{SetCount(5)}}}>
                                                 <label className="widget__categories--menu__label d-flex align-items-center">
                                                     <img
                                                         className="widget__categories--menu__img"
@@ -539,7 +540,7 @@ const Shops = () => {
                                                         />
                                                     </svg>
                                                 </label>
-                                                <ul className="widget__categories--sub__menu">
+                                                <ul className={`widget__categories--sub__menu ${Count==5?'d-block':""}`}>
                                                     <li className="widget__categories--sub__menu--list">
                                                         <a
                                                             className="widget__categories--sub__menu--link d-flex align-items-center"
