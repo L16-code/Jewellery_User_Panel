@@ -66,10 +66,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-.border-box {     
+.border-box {
   box-sizing: border-box;
-  transition-property: height, margin,padding;
-  transition-duration:4s;
+  transition-property: height, margin, padding;
+  transition-duration: 4s;
   overflow: hidden;
 }
- 

@@ -1,11 +1,9 @@
-import Home from './pages/home/Home'
-import Shops from './pages/shops/shops'
+import SingleProductView from "./pages/single product/SingleProductView";
 
-function App() {
-
+const App: React.FC = () => {
   return (
-  <Shops />
-  )
+      <SingleProductView/>
+  );
 }
 
-export default App
+export default App;
