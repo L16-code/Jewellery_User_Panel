@@ -8,6 +8,7 @@ const OffcanvasFilter: React.FC<OffcanvasFilterProps> = ({ openSidebar, setFilte
     const [Count,SetCount] = useState<Number>(-1);
     const handleClose = () => {
         setFilterSidebar(false); // Close the sidebar
+        document.body.classList.remove('offcanvas__filter--sidebar_active');
     };
     return (
         <div className={`offcanvas__filter--sidebar widget__area ${openSidebar ? "active" : ""} `}>

@@ -5,6 +5,7 @@ import ScrollTop from "../../components/scrollTop/ScrollTop"
 import Preloader from "../../components/preloader/Preloader"
 import { useEffect,  useState } from "react"
 import OffcanvasFilter from "../../components/offcanvas-filter/OffcanvasFilter"
+import ShopByCategory from "../../components/ShopbyCategory/ShopByCategory"
 
 const Shops = () => {
 
@@ -22,6 +23,7 @@ const Shops = () => {
     })
     const handleFilterButtonClick = () => {
         setFilterSidebar(true); // Open the sidebar
+        document.body.classList.add('offcanvas__filter--sidebar_active');
     };
     const ProductViewHandler = () => {
         setProductView(!ProductView);
@@ -55,123 +57,7 @@ const Shops = () => {
                     </div>
                 </div>
                 {/* End breadcrumb section */}
-                {/* Start collection section */}
-                <section className="shop__collection--section section--padding">
-                    <div className="container">
-                        <div className="section__heading text-center mb-40">
-                            <h2 className="section__heading--maintitle">Shop By Category</h2>
-                        </div>
-                        <div className="shop__collection--column5 swiper">
-                            <div className="swiper-wrapper">
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection7.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Necklaces</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection8.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Bracelets</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection9.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Earrings</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection10.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Wedding-bridal</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection11.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Shop Earrings</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="swiper-slide">
-                                    <div className="shop__collection--card text-center">
-                                        <a className="shop__collection--link" href="shop.html">
-                                            <img
-                                                className="shop__collection--img"
-                                                src="assets/img/collection/collection7.webp"
-                                                alt="icon-img"
-                                            />
-                                            <h3 className="shop__collection--title mb-0">Necklaces</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="swiper__nav--btn swiper-button-next">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className=" -chevron-right"
-                                >
-                                    <polyline points="9 18 15 12 9 6" />
-                                </svg>
-                            </div>
-                            <div className="swiper__nav--btn swiper-button-prev">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={24}
-                                    height={24}
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className=" -chevron-left"
-                                >
-                                    <polyline points="15 18 9 12 15 6" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* End collection section */}
+                <ShopByCategory />
                 {/* Start shop section */}
                 <div className="shop__section section--padding pt-0">
                     <div className="container">
@@ -1344,7 +1230,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -1559,7 +1445,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -1775,7 +1661,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -1990,7 +1876,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -2205,7 +2091,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -2421,7 +2307,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -2637,7 +2523,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -2852,7 +2738,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -3067,7 +2953,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -3289,7 +3175,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -3494,7 +3380,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -3700,7 +3586,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -3905,7 +3791,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"
@@ -4111,7 +3997,7 @@ const Shops = () => {
                                                                             title="Quick View"
                                                                             data-bs-toggle="modal"
                                                                             data-bs-target="#examplemodal"
-                                                                            href="javascript:void(0)"
+                                                                            href="#"
                                                                         >
                                                                             <svg
                                                                                 className="product__card--action__btn--svg"

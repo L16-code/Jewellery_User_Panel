@@ -339,7 +339,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -548,7 +548,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -758,7 +758,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -967,7 +967,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -1176,7 +1176,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -1386,7 +1386,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -1596,7 +1596,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"
@@ -1805,7 +1805,7 @@ const Home = () => {
                                                         title="Quick View"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#examplemodal"
-                                                        href="javascript:void(0)"
+                                                        href="#"
                                                     >
                                                         <svg
                                                             className="product__card--action__btn--svg"

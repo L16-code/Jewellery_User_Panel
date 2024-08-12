@@ -37,7 +37,7 @@ const quickView = () => {
                                             <div className="swiper-slide">
                                                 <div className="product__media--preview__items">
                                                     <a
-                                                        className="product__media--preview__items--link glightbox"
+                                                        className="product__media--preview__items--link "
                                                         data-gallery="product-media-preview"
                                                         href="assets/img/product/big-product/product1.webp"
                                                     >
@@ -49,7 +49,7 @@ const quickView = () => {
                                                     </a>
                                                     <div className="product__media--view__icon">
                                                         <a
-                                                            className="product__media--view__icon--link glightbox"
+                                                            className="product__media--view__icon--link "
                                                             href="assets/img/product/big-product/product1.webp"
                                                             data-gallery="product-media-preview"
                                                         >
@@ -84,7 +84,7 @@ const quickView = () => {
                                             <div className="swiper-slide">
                                                 <div className="product__media--preview__items">
                                                     <a
-                                                        className="product__media--preview__items--link glightbox"
+                                                        className="product__media--preview__items--link "
                                                         data-gallery="product-media-preview"
                                                         href="assets/img/product/big-product/product2.webp"
                                                     >
@@ -96,7 +96,7 @@ const quickView = () => {
                                                     </a>
                                                     <div className="product__media--view__icon">
                                                         <a
-                                                            className="product__media--view__icon--link glightbox"
+                                                            className="product__media--view__icon--link "
                                                             href="assets/img/product/big-product/product2.webp"
                                                             data-gallery="product-media-preview"
                                                         >
@@ -131,7 +131,7 @@ const quickView = () => {
                                             <div className="swiper-slide">
                                                 <div className="product__media--preview__items">
                                                     <a
-                                                        className="product__media--preview__items--link glightbox"
+                                                        className="product__media--preview__items--link "
                                                         data-gallery="product-media-preview"
                                                         href="assets/img/product/big-product/product3.webp"
                                                     >
@@ -143,7 +143,7 @@ const quickView = () => {
                                                     </a>
                                                     <div className="product__media--view__icon">
                                                         <a
-                                                            className="product__media--view__icon--link glightbox"
+                                                            className="product__media--view__icon--link "
                                                             href="assets/img/product/big-product/product3.webp"
                                                             data-gallery="product-media-preview"
                                                         >
@@ -178,7 +178,7 @@ const quickView = () => {
                                             <div className="swiper-slide">
                                                 <div className="product__media--preview__items">
                                                     <a
-                                                        className="product__media--preview__items--link glightbox"
+                                                        className="product__media--preview__items--link "
                                                         data-gallery="product-media-preview"
                                                         href="assets/img/product/big-product/product4.webp"
                                                     >
@@ -190,7 +190,7 @@ const quickView = () => {
                                                     </a>
                                                     <div className="product__media--view__icon">
                                                         <a
-                                                            className="product__media--view__icon--link glightbox"
+                                                            className="product__media--view__icon--link "
                                                             href="assets/img/product/big-product/product4.webp"
                                                             data-gallery="product-media-preview"
                                                         >
@@ -225,7 +225,7 @@ const quickView = () => {
                                             <div className="swiper-slide">
                                                 <div className="product__media--preview__items">
                                                     <a
-                                                        className="product__media--preview__items--link glightbox"
+                                                        className="product__media--preview__items--link "
                                                         data-gallery="product-media-preview"
                                                         href="assets/img/product/big-product/product5.webp"
                                                     >
@@ -237,7 +237,7 @@ const quickView = () => {
                                                     </a>
                                                     <div className="product__media--view__icon">
                                                         <a
-                                                            className="product__media--view__icon--link glightbox"
+                                                            className="product__media--view__icon--link "
                                                             href="assets/img/product/big-product/product5.webp"
                                                             data-gallery="product-media-preview"
                                                         >

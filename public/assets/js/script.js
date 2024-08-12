@@ -132,7 +132,7 @@ var swiper = new Swiper(".hero__slider--activation", {
 });
 
 // collection swiper column5 activation
-var swiper = new Swiper(".shop__collection--column5", {
+var swiper = new swiper(".shop__collection--column5", {
   slidesPerView: 5,
   loop: true,
   clickable: true,
@@ -169,7 +169,7 @@ var swiper = new Swiper(".shop__collection--column5", {
 
 
 // product swiper clumn4 activation
-var swiper = new Swiper(".product__swiper--column4", {
+var swiper = new swiper(".product__swiper--column4", {
   slidesPerView: 4,
   loop: true,
   clickable: true,
@@ -200,7 +200,7 @@ var swiper = new Swiper(".product__swiper--column4", {
 });
 
 // product sidebar clumn4 activation
-var swiper = new Swiper(".product__sidebar--column4", {
+var swiper = new swiper(".product__sidebar--column4", {
   slidesPerView: 4,
   loop: true,
   clickable: true,
@@ -234,7 +234,7 @@ var swiper = new Swiper(".product__sidebar--column4", {
 });
 
 // testimonial swiper activation
-var swiper = new Swiper(".testimonial__swiper--activation", {
+var swiper = new swiper(".testimonial__swiper--activation", {
   slidesPerView: 4,
   loop: true,
   clickable: true,
@@ -268,7 +268,7 @@ var swiper = new Swiper(".testimonial__swiper--activation", {
 
 
 // testimonial swiper column1 activation
-var swiper = new Swiper(".testimonial__swiper--column1", {
+var swiper = new swiper(".testimonial__swiper--column1", {
   slidesPerView: 1,
   loop: true,
   clickable: true,
@@ -286,7 +286,7 @@ var swiper = new Swiper(".testimonial__swiper--column1", {
 
 
 // blog swiper activation
-var swiper = new Swiper(".blog__swiper--activation", {
+var swiper = new swiper(".blog__swiper--activation", {
   slidesPerView: 3,
   loop: true,
   clickable: true,
@@ -314,7 +314,7 @@ var swiper = new Swiper(".blog__swiper--activation", {
 });
 
 // instagram swiper activation
-var swiper = new Swiper(".instagram__swiper--activation", {
+var swiper = new swiper(".instagram__swiper--activation", {
   slidesPerView: 5,
   loop: true,
   clickable: true,
@@ -344,7 +344,7 @@ var swiper = new Swiper(".instagram__swiper--activation", {
 });
 
 // brand logo swiper activation
-var swiper = new Swiper(".brand__logo--activation", {
+var swiper = new swiper(".brand__logo--activation", {
   slidesPerView: 6,
   loop: true,
   clickable: true,
@@ -388,7 +388,7 @@ var swiper = new Swiper(".brand__logo--activation", {
 
 
 // single product nav activation
-var swiper = new Swiper(".single__product--nav", {
+var swiper = new swiper(".single__product--nav", {
   loop: true,
   spaceBetween: 20,
   slidesPerView: 4,
@@ -417,7 +417,7 @@ var swiper = new Swiper(".single__product--nav", {
     prevEl: ".swiper-button-prev",
   },
 });
-var swiper2 = new Swiper(".single__product--preview", {
+var swiper2 = new swiper(".single__product--preview", {
   loop: true,
   spaceBetween: 10,
   thumbs: {
@@ -426,7 +426,7 @@ var swiper2 = new Swiper(".single__product--preview", {
 });
 
 // product details media swiper activation
-var swiper = new Swiper(".product__media--nav", {
+var swiper = new swiper(".product__media--nav", {
   loop: true,
   spaceBetween: 10,
   slidesPerView: 4,
@@ -448,7 +448,7 @@ var swiper = new Swiper(".product__media--nav", {
     prevEl: ".swiper-button-prev",
   },
 });
-var swiper2 = new Swiper(".product__media--preview", {
+var swiper2 = new swiper(".product__media--preview", {
   loop: true,
   spaceBetween: 10,
   thumbs: {
