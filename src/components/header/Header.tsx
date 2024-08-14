@@ -1,12 +1,22 @@
 import { useState } from "react"
 import TopBarHeader from "./TopBarHeader"
 
-const Header = () => {
-    const [toggler,SetToggler]=useState<Boolean>(false);
+const Header: React.FC = () => {
+    const [toggler, SetToggler] = useState<Boolean>(false);
+    const MobileStickyHeader=document.getElementById('Mobilesticky')
+    if(MobileStickyHeader){
+        window.addEventListener('scroll', function() {
+            if(window.scrollY > 100){
+                MobileStickyHeader.classList.add('sticky');
+            }else{
+                MobileStickyHeader.classList.remove('sticky');
+            }
+        });
+    }
     return (
         <header className="header__section">
             <TopBarHeader />
-            <div className="main__header position__relative header__sticky">
+            <div className="main__header position__relative header__sticky" id="Mobilesticky">
                 <div className="container">
                     <div className="main__header--inner d-flex justify-content-between align-items-center">
                         <div className="offcanvas__header--menu__open ">
@@ -611,7 +621,7 @@ const Header = () => {
                                         <span className="visually-hidden">My Account</span>
                                     </a>
                                 </li>
-                                <li className="header__account--items header__minicart--items" onClick={()=>{
+                                <li className="header__account--items header__minicart--items" onClick={() => {
                                     SetToggler(!toggler)
                                     document.body.classList.add('offCanvas__minicart_active')
                                 }}>
@@ -645,7 +655,7 @@ const Header = () => {
                 </div>
             </div>
             {/* Start Offcanvas header menu */}
-            <div className="offcanvas__header">
+            <div className="offcanvas__header ">
                 <div className="offcanvas__inner">
                     <div className="offcanvas__logo">
                         <a className="offcanvas__logo_link" href="index.html">
@@ -1121,7 +1131,7 @@ const Header = () => {
             </div>
             {/* End Offcanvas sticky toolbar */}
             {/* Start offCanvas minicart */}
-            <div className={`offCanvas__minicart ${toggler ? "active":""}`} >
+            <div className={`offCanvas__minicart ${toggler ? "active" : ""}`} >
                 <div className="minicart__header ">
                     <div className="minicart__header--top d-flex justify-content-between align-items-center">
                         <h3 className="minicart__title"> Shopping Cart</h3>
@@ -1129,7 +1139,7 @@ const Header = () => {
                             className="minicart__close--btn"
                             aria-label="minicart close btn"
                             data-offcanvas
-                            onClick={()=>{
+                            onClick={() => {
                                 SetToggler(false)
                                 document.body.classList.remove('offCanvas__minicart_active')
                             }}

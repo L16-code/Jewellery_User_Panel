@@ -1,12 +1,15 @@
+import { useState } from "react";
 
 const Footer = () => {
-    return (
+    const [Count,SetCount] = useState<Number>(-1);
+    
+    return (    
         <footer className="footer__section footer__bg">
             <div className="container">
                 <div className="main__footer section--padding">
                     <div className="row ">
                         <div className="col-lg-4 col-md-8">
-                            <div className="footer__widget">
+                            <div className={`footer__widget  ${Count == 1 ? 'active' : ""}`} onClick={() => { if (Count === 1) { SetCount(-1) } else { SetCount(1) } }}>
                                 <h2 className="footer__widget--title d-none d-sm-u-block">
                                     About Us{" "}
                                     <button
@@ -27,7 +30,7 @@ const Footer = () => {
                                         />
                                     </svg>
                                 </h2>
-                                <div className="footer__widget--inner">
+                                <div className={`footer__widget--inner ${Count == 1 ? 'd-block border-box border-box  ' : ""}  `}>
                                     <div className="footer__logo">
                                         <a className="footer__logo--link" href="index.html">
                                             <img
@@ -123,7 +126,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4">
-                            <div className="footer__widget">
+                            <div className={`footer__widget  ${Count == 2 ? 'active' : ""}`} onClick={() => { if (Count === 2) { SetCount(-1) } else { SetCount(2) } }}>
                                 <h2 className="footer__widget--title ">
                                     Our Offer{" "}
                                     <button
@@ -144,7 +147,7 @@ const Footer = () => {
                                         />
                                     </svg>
                                 </h2>
-                                <ul className="footer__widget--menu footer__widget--inner">
+                                <ul className={`footer__widget--menu footer__widget--inner ${Count == 2 ? 'd-block border-box border-box  ' : ""}  `}>
                                     <li className="footer__widget--menu__list">
                                         <a className="footer__widget--menu__text" href="contact.html">
                                             Contact Us
