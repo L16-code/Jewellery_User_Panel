@@ -3,6 +3,7 @@ import TopBarHeader from "./TopBarHeader"
 
 const Header: React.FC = () => {
     const [toggler, SetToggler] = useState<Boolean>(false);
+    const [isMobile, setIsMobile] = useState<Boolean>(false);
     const MobileStickyHeader=document.getElementById('Mobilesticky')
     if(MobileStickyHeader){
         window.addEventListener('scroll', function() {
@@ -19,7 +20,10 @@ const Header: React.FC = () => {
             <div className="main__header position__relative header__sticky" id="Mobilesticky">
                 <div className="container">
                     <div className="main__header--inner d-flex justify-content-between align-items-center">
-                        <div className="offcanvas__header--menu__open ">
+                        <div className="offcanvas__header--menu__open " onClick={()=>{
+                            setIsMobile(true)
+                            document.body.classList.add("mobile_menu_open")
+                            }}>
                             <a
                                 className="offcanvas__header--menu__open--btn"
                                 href="#"
@@ -655,7 +659,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
             {/* Start Offcanvas header menu */}
-            <div className="offcanvas__header ">
+            <div className={`offcanvas__header ${isMobile ? "open":""}`} >
                 <div className="offcanvas__inner">
                     <div className="offcanvas__logo">
                         <a className="offcanvas__logo_link" href="index.html">
@@ -666,7 +670,10 @@ const Header: React.FC = () => {
                                 height={36}
                             />
                         </a>
-                        <button className="offcanvas__close--btn" data-offcanvas="">
+                        <button className="offcanvas__close--btn" data-offcanvas="" onClick={()=>{
+                            setIsMobile(false)
+                            document.body.classList.remove('mobile_menu_open')
+                        }}>
                             close
                         </button>
                     </div>
@@ -713,6 +720,7 @@ const Header: React.FC = () => {
                                         </a>
                                     </li>
                                 </ul>
+                                <button className="offcanvas__sub_menu_toggle"></button>
                             </li>
                             <li className="offcanvas__menu_li">
                                 <a className="offcanvas__menu_item" href="shop.html">
@@ -887,6 +895,7 @@ const Header: React.FC = () => {
                                         </ul>
                                     </li>
                                 </ul>
+                                <button className="offcanvas__sub_menu_toggle"></button>
                             </li>
                             <li className="offcanvas__menu_li">
                                 <a className="offcanvas__menu_item" href="blog.html">
@@ -920,6 +929,7 @@ const Header: React.FC = () => {
                                         </a>
                                     </li>
                                 </ul>
+                                <button className="offcanvas__sub_menu_toggle"></button>
                             </li>
                             <li className="offcanvas__menu_li">
                                 <a className="offcanvas__menu_item" href="#">
@@ -962,6 +972,7 @@ const Header: React.FC = () => {
                                         </a>
                                     </li>
                                 </ul>
+                                <button className="offcanvas__sub_menu_toggle"></button>
                             </li>
                             <li className="offcanvas__menu_li">
                                 <a className="offcanvas__menu_item" href="about.html">
@@ -1131,7 +1142,7 @@ const Header: React.FC = () => {
             </div>
             {/* End Offcanvas sticky toolbar */}
             {/* Start offCanvas minicart */}
-            <div className={`offCanvas__minicart ${toggler ? "active" : ""}`} >
+            <div className={`offCanvas__minicart ${toggler ? "active" : ""}`} id="offCanvas__minicart" >
                 <div className="minicart__header ">
                     <div className="minicart__header--top d-flex justify-content-between align-items-center">
                         <h3 className="minicart__title"> Shopping Cart</h3>

@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const Footer = () => {
     const [Count,SetCount] = useState<Number>(-1);
-    
-    return (    
+
+    return (
         <footer className="footer__section footer__bg">
             <div className="container">
                 <div className="main__footer section--padding">
@@ -180,7 +180,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-5">
-                            <div className="footer__widget">
+                            <div className={`footer__widget  ${Count == 3 ? 'active' : ""}`} onClick={() => { if (Count === 3) { SetCount(-1) } else { SetCount(3) } }}>
                                 <h2 className="footer__widget--title ">
                                     Quick Links{" "}
                                     <button
@@ -201,7 +201,7 @@ const Footer = () => {
                                         />
                                     </svg>
                                 </h2>
-                                <ul className="footer__widget--menu footer__widget--inner">
+                                <ul className={`footer__widget--menu footer__widget--inner ${Count == 3 ? 'd-block border-box border-box  ' : ""}  `}>
                                     <li className="footer__widget--menu__list">
                                         <a
                                             className="footer__widget--menu__text"
@@ -234,7 +234,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-lg-2 col-md-5">
-                            <div className="footer__widget">
+                            <div className={`footer__widget  ${Count == 4 ? 'active' : ""}`} onClick={() => { if (Count === 4) { SetCount(-1) } else { SetCount(4) } }}>
                                 <h2 className="footer__widget--title ">
                                     Quick Links{" "}
                                     <button
@@ -255,7 +255,7 @@ const Footer = () => {
                                         />
                                     </svg>
                                 </h2>
-                                <ul className="footer__widget--menu footer__widget--inner">
+                                <ul className={`footer__widget--menu footer__widget--inner ${Count == 4 ? 'd-block border-box border-box  ' : ""}  `}>
                                     <li className="footer__widget--menu__list">
                                         <a
                                             className="footer__widget--menu__text"
