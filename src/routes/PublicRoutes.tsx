@@ -9,6 +9,7 @@ import MyAccount from "../pages/MyAccount/MyAccount"
 import PrivateRoutes from "./PrivateRoutes"
 import Chechout from "../pages/checkout/Chechout"
 import Error from "../pages/Error/Error"
+import Contact from "../pages/Contact/Contact"
 
 const PublicRoutes: React.FC = () => {
     const isAuthenticated = true;
@@ -27,10 +28,10 @@ const PublicRoutes: React.FC = () => {
                     path={routes.SHOPS}
                     element={<WithHeader component={Shops} route={routes.SHOPS} isAuthenticated={isAuthenticated} />}
                 />
-                {/* <Route
-                    path={routes.ERROR}
-                    element={<WithHeader component={Error} route={routes.ERROR} isAuthenticated={isAuthenticated} />}
-                /> */}
+                <Route
+                    path={routes.CONTACT}
+                    element={<WithHeader component={Contact} route={routes.CONTACT} isAuthenticated={isAuthenticated} />}
+                />
                  <Route
                     path="*"
                     element={<WithHeader component={Error} route={routes.ERROR} isAuthenticated={isAuthenticated} />}

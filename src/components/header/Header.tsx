@@ -1,7 +1,10 @@
 import { useState } from "react"
 import TopBarHeader from "./TopBarHeader"
+import { useNavigate } from "react-router-dom";
+import routes from "../../Constants/Routes";
 
 const Header: React.FC = () => {
+    const navigate =useNavigate();
     const [toggler, SetToggler] = useState<Boolean>(false);
     const [isMobile, setIsMobile] = useState<Boolean>(false);
     const MobileStickyHeader=document.getElementById('Mobilesticky')
@@ -61,24 +64,10 @@ const Header: React.FC = () => {
                             <nav className="header__menu--navigation">
                                 <ul className="header__menu--wrapper d-flex">
                                     <li className="header__menu--items">
-                                        <a className="header__menu--link active" href="index.html">
+                                        <a className="header__menu--link " onClick={()=>navigate(routes.HOME)}>
                                             Home
-                                            <svg
-                                                className="menu__arrowdown--icon"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width={12}
-                                                height="7.41"
-                                                viewBox="0 0 12 7.41"
-                                            >
-                                                <path
-                                                    d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z"
-                                                    transform="translate(-6 -8.59)"
-                                                    fill="currentColor"
-                                                    opacity="0.7"
-                                                />
-                                            </svg>
                                         </a>
-                                        <ul className="header__sub--menu">
+                                        {/* <ul className="header__sub--menu">
                                             <li className="header__sub--menu__items">
                                                 <a href="index.html" className="header__sub--menu__link">
                                                     Home - Beauty Cosmetic
@@ -114,7 +103,7 @@ const Header: React.FC = () => {
                                                     Home - Parallax
                                                 </a>
                                             </li>
-                                        </ul>
+                                        </ul> */}
                                     </li>
                                     <li className="header__menu--items mega__menu--items">
                                         <a className="header__menu--link" href="shop.html">
@@ -537,9 +526,9 @@ const Header: React.FC = () => {
                                         </ul>
                                     </li>
                                     <li className="header__menu--items">
-                                        <a className="header__menu--link" href="contact.html">
-                                            Contact{" "}
-                                        </a>
+                                        <a className="header__menu--link"  onClick={()=>navigate(routes.CONTACT)}>
+                                            Contact Us
+                                        </a> 
                                     </li>
                                 </ul>
                             </nav>
@@ -595,10 +584,9 @@ const Header: React.FC = () => {
                                         <span className="visually-hidden">Wishlist</span>
                                     </a>
                                 </li>
-                                <li className="header__account--items">
+                                <li className="header__account--items" onClick={()=>navigate(routes.MYACCOUNT)}>
                                     <a
                                         className="header__account--btn d-sm-2-none"
-                                        href="my-account.html"
                                     >
                                         <span className="header__account--btn__icon">
                                             <svg

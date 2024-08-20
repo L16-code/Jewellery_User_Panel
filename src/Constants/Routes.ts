@@ -7,6 +7,7 @@ const routes={
     CHECKOUT:'/checkout',
     ERROR:'/error404',
     SHOPS:'/shops',
+    CONTACT:'/contact',
 }
 
 export default routes;
