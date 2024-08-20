@@ -1,32 +1,20 @@
-import { useEffect, useRef, useState } from "react";
-import Preloader from "../../components/preloader/Preloader"
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import QuickView from "../../components/quickView/quickView"
-import ScrollTop from "../../components/scrollTop/ScrollTop";
 import FsLightbox from "fslightbox-react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useRef, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperClass } from 'swiper/types';
-import Related_Products from "../../components/Related-Products/Related_Products";
 import FeatureSection from "../../components/FeatureSection/FeatureSection";
+import QuickView from "../../components/quickView/quickView";
+import Related_Products from "../../components/Related-Products/Related_Products";
 // Install Swiper modules
 const SingleProductView = () => {
     const [value, setValue] = useState<number>(1);
     const [toggler, setToggler] = useState(false);
     const swiperRef = useRef<SwiperClass | null>(null);
 
-    const [Loading, SetLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            SetLoading(false)
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    })
     const SwiperArrowHandler = (val: string) => {
         if (val === "next") {
             swiperRef.current?.slideNext();
@@ -42,10 +30,6 @@ const SingleProductView = () => {
     };
     return (
         <>
-            {
-                Loading && <Preloader />
-            }
-            <Header />
             <main className="main__content_wrapper">
                 {/* Start breadcrumb section */}
                 <div className="breadcrumb__section breadcrumb__bg">
@@ -1316,10 +1300,7 @@ const SingleProductView = () => {
                     ]}
                 />
             </main>
-
-            <Footer />
             <QuickView />
-            <ScrollTop />
         </>
     )
 }

@@ -5,7 +5,8 @@ const routes={
     MYACCOUNT:'/MyAccount',
     CART:'/cart',
     CHECKOUT:'/checkout',
-    ERROR:'/error404'
+    ERROR:'/error404',
+    SHOPS:'/shops',
 }
 
 export default routes;

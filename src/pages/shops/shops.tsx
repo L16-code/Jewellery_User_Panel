@@ -1,10 +1,6 @@
-import Footer from "../../components/footer/Footer"
-import Header from "../../components/header/Header"
-import QuickView from "../../components/quickView/quickView"
-import ScrollTop from "../../components/scrollTop/ScrollTop"
-import Preloader from "../../components/preloader/Preloader"
-import { useEffect,  useState } from "react"
+import { useState } from "react"
 import OffcanvasFilter from "../../components/offcanvas-filter/OffcanvasFilter"
+import QuickView from "../../components/quickView/quickView"
 import ShopByCategory from "../../components/ShopbyCategory/ShopByCategory"
 
 const Shops = () => {
@@ -13,14 +9,6 @@ const Shops = () => {
     const [ProductView, setProductView] = useState<boolean>(false);
     const [Count,SetCount] = useState<Number>(-1);
 
-    const [Loading, SetLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            SetLoading(false)
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    })
     const handleFilterButtonClick = () => {
         setFilterSidebar(true); // Open the sidebar
         document.body.classList.add('offcanvas__filter--sidebar_active');
@@ -30,11 +18,7 @@ const Shops = () => {
     }
     return (
         <>
-            {
-                Loading && <Preloader />
-            }
             <OffcanvasFilter openSidebar={filterSidebar} setFilterSidebar={setFilterSidebar} />
-            <Header />
             <main className="main__content_wrapper">
                 {/* Start breadcrumb section */}
                 <div className="breadcrumb__section breadcrumb__bg">
@@ -4306,10 +4290,7 @@ const Shops = () => {
                 </section>
                 {/* End feature section */}
             </main>
-
-            <Footer />
             <QuickView />
-            <ScrollTop />
 
         </>
     )

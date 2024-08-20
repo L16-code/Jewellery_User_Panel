@@ -1,23 +1,6 @@
-import Footer from "../../components/footer/Footer"
-import Header from "../../components/header/Header"
-import ScrollTop from "../../components/scrollTop/ScrollTop"
-import Preloader from "../../components/preloader/Preloader"
-import { useEffect, useState } from "react"
 const Contact = () => {
-    const [Loading, SetLoading] = useState(true);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            SetLoading(false)
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    })
     return (
         <>
-            {
-                Loading && <Preloader />
-            }
-            <Header />
             <main className="main__content_wrapper">
                 {/* Start breadcrumb section */}
                 <div className="breadcrumb__section breadcrumb__bg">
@@ -380,8 +363,6 @@ const Contact = () => {
                 </section>
                 {/* End feature section */}
             </main>
-            <Footer />
-            <ScrollTop />
         </>
     )
 }
